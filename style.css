@@ -73,7 +73,60 @@ body {
 .dsh1{
   padding-left: 5%;
   padding-top: 7%;
+  color: #E5936A;
+  font-size: 5vw;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 .dsh11{
-  padding-left: 5%;  
+  padding-left: 5%;
+  color: #E5936A;
+  font-size: 5vw;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+.button {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 6%;
+  margin-top: 50px;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #ebebeb;
+}
+
+@media (max-width: 768px) {
+  .button {
+    margin-left: 6%;
+    margin-top: 10px;
+    max-width: 25%;
+    text-align: center;
+    font-size: 2vw;
+    box-sizing: border-box;
+  }
+}
+
+.txtimg{
+  padding-left: 5%;
+  margin-top: 2%;
+  font-size: 2vw;
+  text-align: left;
+  width: 36%;
+  font-family: Comic Sans MS, Comic Sans, cursive;
 }
