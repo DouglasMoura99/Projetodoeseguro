@@ -59,7 +59,7 @@ body {
 .imgmeninos {    
   width: 100%;
   height: 100vh;
-  background-image: url('../images/imgmeninos.png');
+  background-image: url('./images/imgmeninos.png');
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center top;  
@@ -76,12 +76,14 @@ body {
   color: #E5936A;
   font-size: 5vw;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: Comic Sans MS, Comic Sans, cursive;
 }
 .dsh11{
   padding-left: 5%;
   color: #E5936A;
   font-size: 5vw;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: Comic Sans MS, Comic Sans, cursive;
 }
 .button-container {
   display: flex;
@@ -129,4 +131,44 @@ body {
   text-align: left;
   width: 36%;
   font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-dialog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.modal-content {  
+  background-color: #fff;
+  left: 10%;
+  padding: 0;
+  margin: 0 auto; 
+  position: relative;
+  width: 90%;
+  overflow: hidden;
+  height: 77%;    
+  background: color #ffffff80;  
+  border-radius:4%;
+  box-shadow:3px 3px 1px 0px #00000060 
+     
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
 }
