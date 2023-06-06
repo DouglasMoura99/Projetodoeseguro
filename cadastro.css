@@ -87,8 +87,8 @@ body{
     color: #352791;
 }
 button{
-    background-color: blue;
-    border-color: blue;
+    background-color: #E5936A;
+    border-color: white;
     border-radius: 8px;
     padding: 7px;
     font-weight: bold;
@@ -101,7 +101,7 @@ button{
     
 }
 button:hover{
-    background-color: blue;
+    background-color: orange;
     color: black;
 }
 .justify-center{
@@ -120,6 +120,6 @@ p{
     text-align: center;
 }
 a{
-    color: black;
+    color: blue;
     
-}  
+}
