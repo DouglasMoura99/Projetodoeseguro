@@ -4,113 +4,109 @@ html {
 }
 body {
   margin: 0;
-}
-.loupe-white {
-  display: none;
-}
-
-.search-box {
-  background: #c3bfbc;
-  height: 40px;
-  padding: 5px;
-  border-radius: 40px;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.search-box:hover>.search-text {
-  width: 150px;
-  transition: 0.6s;
-  padding-left: 10px;
-}
-
-.search-box:hover>.search-btn {
-  background: #68635f;
-  border-radius: 20px;
-}
-
-.search-box:hover>.search-btn .loupe-blue {
-  display: none;
-}
-
-.search-box:hover>.search-btn .loupe-white {
-  display: block;
-}
-
-.search-text {
-  background: none;
   padding: 0;
-  border: 0;
-  outline: 0;
-  width: 0;
-}
-
-.search-btn {
-  width: 25px;
-  height: 25px;
-  display: flex;
-  justify-content: center;
+  padding-bottom: 0;
+  background-color: none;
+  font-family: "Urbanist", sans-serif;
   align-items: center;
-  cursor: pointer;
+  background: rgb(229, 147, 106);
+  background: radial-gradient(
+    circle,
+    rgba(229, 147, 106, 1) 0%,
+    rgba(229, 147, 106, 0.6250875350140056) 48%,
+    rgba(229, 147, 106, 1) 100%
+  );
+}
+.navbar-toggler-icon {
+  color: #e5936a; /* Define a cor do ícone para preto */
+}
+.navbar-nav .nav-link {
+  position: relative; /*Define a posição dos elementos <a>, necessário para o posicionamento absoluto do elemento ::after que será adicionado posteriormente.*/
+  padding-bottom: 5px; /*Adiciona um espaçamento de 5 pixels na parte inferior dos elementos <a> para que a linha nao fique grudade ao link.*/
 }
 
-.imgmeninos {    
+.navbar-nav .nav-link::after {
+  /*será usado para criar a linha que percorre horizontalmente abaixo dos links.*/
+  content: ""; /*Deixa o conteudo vazio pois so vai ser uma linha*/
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
-  height: 100vh;
-  background-image: url('./images/imgmeninos.png');
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  background-position: center top;  
-  position: relative;  
+  height: 2px;
+  background-color: #e5936a;
+  transform: scaleX(0); /* Inicialmente a linha não é visível */
+  transition: transform 0.3s ease-in-out; /*Adiciona uma transição suave, transform está sendo animada ao longo de 0.3 segundos, usando uma curva de aceleração e desaceleração suave.*/
 }
-@media (min-width: 1080px) {
-  .imgmeninos {    
-    background-size: 100% 90%;
+
+.navbar-nav .nav-link:hover::after {
+  transform: scaleX(1); /* A linha se expande ao passar o mouse sobre o link */
+}
+.break-line {
+  margin-top: 70px; /* Altura do menu */
+}
+
+.imgmeninos {
+  /*Define estilos para a imagem de fundo.*/
+  width: 100%;
+  background-image: url("./images/imgmeninos.png"); /*diretorio onde a imagem esta*/
+  background-repeat: no-repeat; /*mpede a repetição da imagem de fundo.*/
+  background-size: 100% auto; /*ajusta a imagem de fundo para cobrir 100% da largura e manter a proporção de altura.*/
+  background-position: center top;
+  position: relative;
+}
+@media (min-width: 280px) and (max-width: 450px) {
+  .imgmeninos {
+    height: 29vh;
   }
 }
-.dsh1{
-  padding-left: 5%;
-  padding-top: 7%;
-  color: #E5936A;
-  font-size: 5vw;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  font-family: Comic Sans MS, Comic Sans, cursive;
+@media (min-width: 500px) and (max-width: 820px) {
+  .imgmeninos {
+    height: 39vh;
+  }
 }
-.dsh11{
-  padding-left: 5%;
-  color: #E5936A;
-  font-size: 5vw;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  font-family: Comic Sans MS, Comic Sans, cursive;
+@media (min-width: 850px) and (max-width: 1920px) {
+  .imgmeninos {
+    height: 85vh;
+    width: 80%;
+  }
+}
+@media (width: 912px) {
+  .imgmeninos {
+    height: 29vh;
+    width: 80%;
+  }
+}
+@media (width: 800px) {
+  .imgmeninos {
+    height: 70vh;
+    width: 90%;
+  }
 }
 .button-container {
   display: flex;
-  justify-content: center;
+  justify-content: center; /*Centraliza horizontalmente os elementos dentro do contêiner.*/
 }
 
-.button-container {
-  display: flex;
-  justify-content: center;
-}
 .button {
-  display: inline-block;
+  display: inline-block; /* Faz com que o botão seja exibido em linha, permitindo que outros elementos fiquem ao lado dele.*/
   background-color: #ffffff;
   color: #000000;
   padding: 10px 20px;
   border-radius: 20px;
   border: none;
-  text-decoration: none;
+  text-decoration: none; /*Remove qualquer decoração de sublinhado no texto do botão.*/
   font-weight: bold;
   margin-left: 6%;
-  margin-top: 50px;
-  box-sizing: border-box;
-  transition: background-color 0.3s ease;
+  margin-top: 30px;
+  box-sizing: border-box; /*Garante que o tamanho total do botão seja calculado incluindo o preenchimento e a borda.*/
+  transition: background-color 0.3s ease; /*Adiciona uma transição suave de 0,3 segundos ao alterar a cor de fundo do botão.*/
+  text-align: left;
+  align-items: left;
 }
 
 .button:hover {
-  background-color: #ebebeb;
+  /*Quando o mouse estiver em cima do botao*/
+  background-color: #ebebeb; /*quando o cursor passar sobre o botão, a cor de fundo será alterada para esse cinza claro.*/
 }
 
 @media (max-width: 768px) {
@@ -124,51 +120,431 @@ body {
   }
 }
 
-.txtimg{
+.txtimg {
+  text-align: center left;
+  padding-top: 10%;
   padding-left: 5%;
-  margin-top: 2%;
   font-size: 2vw;
-  text-align: left;
   width: 36%;
   font-family: Comic Sans MS, Comic Sans, cursive;
+  font-size: 40px;
+  margin-bottom: 1px;
 }
-
+@media (min-width: 280px) and (max-width: 450px) {
+  .txtimg {
+    font-size: 12px;
+    padding-top: 5%;
+  }
+}
+@media (min-width: 500px) and (max-width: 600px) {
+  .txtimg {
+    font-size: 18px;
+    padding-top: 5%;
+  }
+}
+@media (min-width: 600px) and (max-width: 912px) {
+  .txtimg {
+    font-size: 23px;
+    padding-top: 5%;
+  }
+}
+@media (min-width: 915px) and (max-width: 1099px) {
+  .txtimg {
+    font-size: 25px;
+    padding-top: 5%;
+  }
+}
+@media (min-width: 1100px) and (max-width: 1280px) {
+  .txtimg {
+    font-size: 35px;
+    padding-top: 5%;
+  }
+}
+@media (min-width: 1300px) and (max-width: 1400px) {
+  .txtimg {
+    font-size: 35px;
+    padding-top: 5%;
+  }
+}
 .modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
+  /*Define uma classe para o modal.*/
+  display: none; /*Esconde o modal inicialmente.*/
+  position: fixed; /*Define a posição do modal como fixa em relação à janela de visualização.*/
+  z-index: 9999; /*Define uma camada superior para o modal, para que ele fique acima de outros elementos da página.*/
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /*Define a cor de fundo do modal como preto semitransparente.*/
 }
 
 .modal-dialog {
+  /*Define uma classe para o diálogo/modal dentro do modal.*/
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
 }
 
-.modal-content {  
+.modal-content {
+  /*Define uma classe para o conteúdo do diálogo/modal.*/
   background-color: #fff;
   left: 10%;
   padding: 0;
-  margin: 0 auto; 
+  margin: 0 auto;
   position: relative;
   width: 90%;
-  overflow: hidden;
-  height: 77%;    
-  background: color #ffffff80;  
-  border-radius:4%;
-  box-shadow:3px 3px 1px 0px #00000060 
-     
+  overflow: hidden; /*Oculta qualquer conteúdo que exceda os limites do conteúdo do diálogo/modal.*/
+  height: 65%;
+  background: color #ffffff80;
+  border-radius: 4%;
+  box-shadow: 3px 3px 1px 0px #00000060;
+  display: flex;
+  justify-content: space-around;
 }
-
+@media screen and (max-width: 768px) {
+  .modal-content {
+    width: auto;
+    height: 80%;
+    flex-direction: column;
+  }
+}
 .close {
+  /*estilo para o botão de fechar o modal*/
   position: absolute;
   top: 10px;
   right: 10px;
+  cursor: pointer; /* Define o cursor do mouse como um ponteiro ao passar sobre o botão de fechar.*/
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@200;300;400;600;700&display=swap");
+
+a {
+  text-decoration: none;
+}
+
+input {
+  display: none;
+}
+
+.container {
+  display: flex;
+  align-items: center top;
+  justify-content: center;
+  overflow-x: hidden; /*Oculta o conteúdo que transborda horizontalmente do contêiner.*/
+  width: 100%;
+  height: 80vh; /* Alterado para usar a altura total da viewport */
+  font-family: "Urbanist", sans-serif;
+}
+@media (min-width: 280px) and (max-width: 450px) {
+  .container {
+    height: 65vh;
+  }
+}
+@media (min-width: 768px) and (max-width: 900px) {
+  .container {
+    height: 61vh;
+  }
+}
+@media (width: 912px) {
+  .container {
+    height: 48vh;
+  }
+}
+@media (width: 800px) {
+  .container {
+    height: 90vh;
+  }
+}
+@media (min-width: 950px) and (max-width: 1366px) {
+  .container {
+    height: 100vh;
+  }
+}
+@media (min-width: 1400px) and (max-width: 2000px) {
+  .container {
+    height: 70vh;
+  }
+}
+
+.containersc {
+  display: grid; /*Aplica o modelo de layout em grade ao contêiner secundário.*/
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Define a estrutura da grade com colunas automáticas ajustáveis, onde cada coluna tem uma largura mínima de 300 pixels e se expande para preencher o espaço disponível no contêiner secundário.*/
+  gap: 20px; /*Define um espaçamento de 20 pixels entre as células da grade.*/
+  justify-items: center; /*Centraliza horizontalmente os itens (elementos) dentro das células da grade.*/
+}
+
+.cards {
+  position: relative;
+  height: 50%; /* Alterado para usar a altura do contêiner pai */
+  width: 110%; /* Alterado para usar a largura do contêiner pai */
+  margin-bottom: 20px;
+  perspective: 1000px; /*Define a perspectiva para a renderização 3D dos elementos filhos dos cartões.*/
+  transform-style: preserve-3d; /*Define o estilo de transformação 3D preservado para os elementos filhos dos cartões.*/
+  top: 20px;
+}
+
+.cards label {
+  /*Define uma classe para os rótulos dos cartões.*/
+  position: absolute;
+  width: 100%; /* Alterado para usar a largura do contêiner pai */
+  left: 0;
+  right: 0;
+  margin: auto;
   cursor: pointer;
+  transition: transform 0.55s ease; /*Adiciona uma transição suave de 0,55 segundos ao aplicar transformações nos rótulos.*/
+}
+
+.cards .card {
+  /* Define uma classe para cada cartão individual dentro do conjunto.*/
+  position: relative;
+  height: 100%;
+  background-color: #323444;
+  border-radius: 10px;
+  padding: 30px 35px;
+}
+
+.card .image {
+  /*Define uma classe para a seção de imagens dentro de cada cartão.*/
+  display: flex;
+  justify-content: space-between; /*Distribui os elementos filhos (imagens) horizontalmente, com espaço igual entre eles.*/
+  flex-wrap: wrap; /* Adicionado para evitar que as imagens se sobreponham em telas estreitas */
+}
+
+.card .image img {
+  border-radius: 5px;
+  box-shadow: 15px 15px 40px rgba(0, 0, 0, 50%); /*adiciona uma sombra suave às imagens.*/
+  margin-top: 23px;
+  width: 100%; /* Alterado para usar a largura do contêiner pai */
+  height: auto; /* Alterado para permitir dimensionamento proporcional */
+  object-fit: cover; /*Redimensiona as imagens para preencher completamente a área do elemento, mantendo a proporção original e cortando qualquer parte excedente.*/
+}
+
+.card .infos {
+  /*Define uma classe para a seção de informações dentro de cada cartão.*/
+  display: block; /*Define o comportamento de exibição da seção de informações como um bloco.*/
+  text-align: end; /*Alinha o conteúdo da seção de informações à direita.*/
+  padding-top: 10px;
+}
+
+.infos span {
+  /*Seleciona os elementos <span> dentro da seção de informações.*/
+  display: block;
+}
+
+.infos .name {
+  /*Define uma classe para o elemento que contém o nome dentro da seção de informações.*/
+  font-size: 30px;
+  color: var(
+    --current-color1
+  ); /*Define a cor do texto do nome usando uma variável CSS (--current-color1).*/
+  letter-spacing: 8px; /*Adiciona um espaçamento entre as letras do nome de 8 pixels.*/
+  margin-bottom: 20px;
+  padding-left: 25%;
+  transition: all 0.6s ease; /*Adiciona uma transição suave com duração de 0,6 segundos para todas as propriedades quando houver alterações no elemento.*/
+}
+
+.infos .lorem {
+  /*Define uma classe para o elemento que contém o texto dentro da seção de informações.*/
+  font-size: 15.5px;
+  color: #eceaed;
+  letter-spacing: 3px;
+}
+
+.card .btn-contact {
+  /*Define uma classe para o botão de contato dentro do cartão.*/
+  width: 100%;
+  height: 60px;
+  margin: 35px auto;
+  border-radius: 5px;
+  background-color: var(
+    --current-color1
+  ); /*: Define a cor de fundo do botão usando uma variável CSS (--current-color1).*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 25px;
+  letter-spacing: 10px;
+  font-weight: 700;
+  transition: all 0.7s ease;
+}
+@media (min-width: 280px) and (max-width: 450px) {
+  .cards {
+    width: 85%;
+  }
+}
+@media (min-width: 280px) and (max-width: 450px) {
+  .card .infos {
+    height: 100px;
+    padding-top: 0;
+  }
+}
+@media (min-width: 280px) and (max-width: 450px) {
+  .card .infos .name {
+    font-size: 20px;
+    padding-left: 0;
+    margin-bottom: 5px;
+  }
+}
+@media (min-width: 280px) and (max-width: 450px) {
+  .cards .label {
+    height: 1800px;
+  }
+}
+@media (min-width: 280px) and (max-width: 450px) {
+  .cards .infos .lorem {
+    letter-spacing: 0;
+    margin-top: 5px;
+  }
+}
+@media (min-width: 280px) and (max-width: 450px) {
+  .card .btn-contact {
+    height: 50px;
+    margin-top: 50px;
+    font-size: 20px;
+    letter-spacing: 5px;
+  }
+}
+@media (min-width: 451px) and (max-width: 550px) {
+  .cards {
+    width: 85%;
+  }
+}
+@media (min-width: 451px) and (max-width: 550px) {
+  .card .infos {
+    height: 100px;
+    padding-top: 0;
+  }
+}
+@media (min-width: 451px) and (max-width: 550px) {
+  .card .infos .name {
+    font-size: 20px;
+    padding-left: 0;
+    margin-bottom: 5px;
+  }
+}
+@media (min-width: 451px) and (max-width: 550px) {
+  .cards .label {
+    height: 1800px;
+  }
+}
+@media (min-width: 451px) and (max-width: 550px) {
+  .cards .infos .lorem {
+    letter-spacing: 0;
+    margin-top: 5px;
+  }
+}
+@media (min-width: 451px) and (max-width: 550px) {
+  .card .btn-contact {
+    height: 50px;
+    margin-top: 50px;
+    font-size: 20px;
+    letter-spacing: 5px;
+  }
+}
+@media (width: 800px) {
+  .cards {
+    width: 85%;
+  }
+}
+@media (width: 800px) {
+  .card .infos {
+    height: 100px;
+    padding-top: 0;
+  }
+}
+@media (width: 800px) {
+  .card .infos .name {
+    font-size: 20px;
+    padding-left: 0;
+    margin-bottom: 5px;
+  }
+}
+@media (width: 800px) {
+  .cards .label {
+    height: 1800px;
+  }
+}
+@media (width: 800px) {
+  .cards .infos .lorem {
+    letter-spacing: 0;
+    margin-top: 5px;
+  }
+}
+@media (width: 800px) {
+  .card .btn-contact {
+    height: 50px;
+    margin-top: 50px;
+    font-size: 20px;
+    letter-spacing: 5px;
+  }
+}
+/*manipulação dos estilos dos slides com base nas seleções dos elementos de input #s1, #s2, #s3, #s4 e #s5.*/
+/*Cada conjunto de regras corresponde a um estado específico dos seletores :checked e define diferentes estilos para os slides correspondentes.*/
+#s1:checked ~ .cards #slide4,
+#s2:checked ~ .cards #slide5,
+#s3:checked ~ .cards #slide1,
+#s4:checked ~ .cards #slide2,
+#s5:checked ~ .cards #slide3 {
+  box-shadow: 0 15px 35px 0 rgba(0, 0, 0, 45%); /*Aplica um sombreamento ao slide.*/
+  transform: translate3d(
+    -70%,
+    0,
+    -220px
+  ); /*Aplica uma transformação 3D (translação) ao slide.*/
+  --current-color1: #eceaed;
+  --current-color2: #404457;
+}
+
+#s1:checked ~ .cards #slide5,
+#s2:checked ~ .cards #slide1,
+#s3:checked ~ .cards #slide2,
+#s4:checked ~ .cards #slide3,
+#s5:checked ~ .cards #slide4 {
+  box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 45%);
+  transform: translate3d(-35%, 0, -120px);
+  --current-color1: #eceaed;
+  --current-color2: #404457;
+}
+
+#s1:checked ~ .cards #slide1,
+#s2:checked ~ .cards #slide2,
+#s3:checked ~ .cards #slide3,
+#s4:checked ~ .cards #slide4,
+#s5:checked ~ .cards #slide5 {
+  box-shadow: 0 25px 50px 0 rgba(0, 0, 0, 50%);
+  transform: translate3d(0, 0, 0);
+  --current-color1: #fad00c;
+  --current-color2: #eceaed;
+}
+
+#s1:checked ~ .cards #slide2,
+#s2:checked ~ .cards #slide3,
+#s3:checked ~ .cards #slide4,
+#s4:checked ~ .cards #slide5,
+#s5:checked ~ .cards #slide1 {
+  box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 45%);
+  transform: translate3d(35%, 0, -120px);
+  --current-color1: #eceaed;
+  --current-color2: #404457;
+}
+
+#s1:checked ~ .cards #slide3,
+#s2:checked ~ .cards #slide4,
+#s3:checked ~ .cards #slide5,
+#s4:checked ~ .cards #slide1,
+#s5:checked ~ .cards #slide2 {
+  box-shadow: 0 15px 35px 0 rgba(0, 0, 0, 45%);
+  transform: translate3d(70%, 0, -220px);
+  --current-color1: #eceaed;
+  --current-color2: #404457;
 }
