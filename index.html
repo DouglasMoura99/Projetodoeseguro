@@ -1,83 +1,224 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!--Importa um arquivo JavaScript externo chamado "script.js".-->
     <script src="script.js"></script>
 
-   
-      
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="style.css" />
     <title>Doe Seguro</title>
   </head>
-  <body> 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <span class="navbar-brand mb-0 h1">Doe Seguro</span>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item">
 
-                <a class="nav-link" href="#">Login</a>            
+  <body>
+    <!--Define uma barra de navegação responsiva utilizando css do Bootstrap-->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-dark fixed-top col-12"
+      id="topo"
+    >
+      <!-- Cria um contêiner responsivo para o conteúdo da barra de navegação.-->
+      <div class="container-fluid">
+        <a class="navbar-brand mb-0 h1" href="#top">
+          <img src="images/dslogo.png" alt="dslogo" style="width: 100px" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" style="color: #e5936a" href="#">Home</a>
+            </li>
 
-              </li>
-              <li class="nav-item">             
-
-                <a class="nav-link active" aria-current="page" href="#" onclick="openModal()">Cadastro</a>
-
-                <div id="modal" class="modal">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <span class="close" onclick="closeModal()">&times;</span>
-                            <iframe src="cadastro.html" width="100%" height="100%" frameborder="0"></iframe>
-                        </div>
-                    </div>
+            <li class="nav-item">
+              <!--Cria um link "Cadastro" na barra de navegação que, quando clicado, chama uma função JavaScript chamada "openModal()".-->
+              <a
+                class="nav-link active"
+                aria-current="page"
+                style="color: #e5936a"
+                href="#"
+                onclick="openModal()"
+                >Contato</a
+              >
+              <!-- Define uma janela modal (pop-up) com o ID "modal". Ela é oculta inicialmente e exibida quando a função "openModal()" é chamada.-->
+              <div id="modal" class="modal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <iframe
+                      src="cadastro.html"
+                      width="100%"
+                      height="100%"
+                      frameborder="0"
+                    ></iframe>
+                  </div>
                 </div>
+              </div>
+            </li>
 
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Doar</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Sobre Nós</a>
-              </li>
-            </ul>           
-            <form class="d-flex search-box">
-                <input class="form-control me-2 search-text" type="search" placeholder="Pesquisar..." aria-label="Search">
-                <a class="search-btn">
-                    <img class="loupe-blue" src="loupe-blue.svg" alt="" width="25px" height="20px">
-                    <img class="loupe-white" src="loupe-white.svg" alt="" width="25px" height="20px">
-                </a>
-              </form>
-          </div>
+            <li class="nav-item">
+              <a class="nav-link" style="color: #e5936a" href="#doar">Doar</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" style="color: #e5936a" href="#">Sobre Nós</a>
+            </li>
+          </ul>
         </div>
-      </nav>
-        <div class="imgmeninos container-fluid">      
-          <h1 class="dsh1">Doe</h1>
-          <h1 class="dsh11">Seguro!</h1>
-          <a href="#" class="button">SAIBA MAIS</a>
-          <p class="txtimg">Somos um site especializado em doações para instituições e ONGs, com transparencia e segurança.</p>
-        </div>   
+      </div>
+    </nav>
 
-  
+    <!--Cria uma seção com uma imagem de fundo e alguns elementos de texto.-->
+    <div class="imgmeninos container-fluid break-line">
+      <p class="txtimg">
+        Somos um site que facilita, você doador encontrar instituições,
+        movimentos ou ONGs, para fazer sua doação.
+      </p>
+      <a href="#" class="button">SAIBA MAIS</a>
+    </div>
+
+    <!--Inicio do carrosel de imagem-->
+    <div class="container" id="doar">
+      <section class="containersc">
+        <!--Cria um botão de rádio oculto com o ID "s1" e é inicialmente marcado como selecionado.-->
+        <input type="radio" name="slider" class="d-none" id="s1" checked />
+        <input type="radio" name="slider" class="d-none" id="s2" />
+        <input type="radio" name="slider" class="d-none" id="s3" />
+        <input type="radio" name="slider" class="d-none" id="s4" />
+        <input type="radio" name="slider" class="d-none" id="s5" />
+        <section class="cards">
+          <!-- Cria um rótulo para o botão de rádio "s1" e define o ID "slide1".-->
+          <label for="s1" id="slide1">
+            <!--Cria um cartão na seção de cartões.-->
+            <section class="card">
+              <section class="image">
+                <!--Insere uma imagem no cartão.-->
+                <img src="images/amem.jpg" alt="amem" />
+              </section>
+              <section class="infos">
+                <!-- Insere um elemento de texto com a classe "name".-->
+                <span class="name">Amem</span>
+                <span class="lorem"
+                  >Casa de longa permanência para idosos.</span
+                >
+              </section>
+              <!--Cria um link "SAIBA MAIS" que abre em uma nova aba do navegador quando clicado.-->
+              <a
+                href="https://abrigoamem.ong.br"
+                target="_blank"
+                class="btn-contact"
+                >SAIBA MAIS</a
+              >
+            </section>
+          </label>
+          <label for="s2" id="slide2">
+            <section class="card">
+              <section class="image">
+                <img src="images/cicovi.png" alt="cicovi" />
+              </section>
+              <section class="infos">
+                <span class="name">Cicovi</span>
+                <span class="lorem"
+                  >Centro Integrado de Ações Comunitárias pela Vida.</span
+                >
+              </section>
+              <a
+                href="https://www.cicovi.org.br/quem-somos.html"
+                target="_blank"
+                class="btn-contact"
+                >SAIBA MAIS</a
+              >
+            </section>
+          </label>
+          <label for="s3" id="slide3">
+            <section class="card">
+              <section class="image">
+                <img src="images/maosaobra.png" alt="maosaobra" />
+              </section>
+              <section class="infos">
+                <span class="name">Mãos a Obra</span>
+                <span class="lorem"
+                  >Projeto de caridade para familias necessitadas.</span
+                >
+              </section>
+              <a
+                href="https://www.instagram.com/maosaobrasantissimatrindade/"
+                target="_blank"
+                class="btn-contact"
+                >SAIBA MAIS</a
+              >
+            </section>
+          </label>
+          <label for="s4" id="slide4">
+            <section class="card">
+              <section class="image">
+                <img src="images/aldeiasos.png" alt="aldeiasos" />
+              </section>
+              <section class="infos">
+                <span class="name">Aldeia SOS</span>
+                <span class="lorem">A Aldeias Infantis SOS.</span>
+              </section>
+              <a
+                href="https://www.aldeiasinfantis.org.br/conheca/quem-somos"
+                target="_blank"
+                class="btn-contact"
+                >SAIBA MAIS</a
+              >
+            </section>
+          </label>
+          <label for="s5" id="slide5">
+            <section class="card">
+              <section class="image">
+                <img src="images/laureano.jpg" alt="laureano" />
+              </section>
+              <section class="infos">
+                <span class="name">Napoleão Laureano</span>
+                <span class="lorem">O hospital da vida.</span>
+              </section>
+              <a
+                href="http://hlaureano.org.br"
+                target="_blank"
+                class="btn-contact"
+                >SAIBA MAIS</a
+              >
+            </section>
+          </label>
+        </section>
+      </section>
+    </div>
+    <!--Fim do carrosell de imagems-->
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->
-
-
   </body>
 </html>
