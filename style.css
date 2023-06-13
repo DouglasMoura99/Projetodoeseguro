@@ -517,3 +517,35 @@ input {
   --current-color1: #eceaed;
   --current-color2: #404457;
 }
+
+body {
+  font-family: arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.texto {
+  margin-bottom: 40px;
+  border-bottom-style: solid;
+}
+
+.texto h2 {
+  margin-bottom: 10px;
+}
+
+.texto p {
+  margin-bottom: 10px;
+  transition: width 2s;
+}
+
+#texto {
+  transition-timing-function: ease;
+}
+
+.texto:hover {
+  width: 70%;
+}
